@@ -1,1 +1,35 @@
-<p>header works!</p>
+<header>
+    <div class="row bg-blancCasse">
+        <!-- Nom + logo marque -->
+        <div>
+            <a routerLink="/">
+
+                <h3 class="text-noir">Nova Market</h3>
+            </a>
+        </div>
+        <!-- Navigation -->
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a routerLink="/">
+                            Accueil
+                        </a>
+                    </li>
+                    <li> • </li>
+                    <li>
+                        <a routerLink="/product">
+                            Produits
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Icones : panier / menu burger -->
+        <div>
+            <a routerLink="/cart">
+                <img src="./images/shopping-bag.png" alt="shopping bag">
+            </a>
+        </div>
+    </div>
+</header>

@@ -13,3 +13,9 @@ export interface User{
     email: string;
     password: string;
 }
+
+export interface CartInt{
+    id:number;
+    userId:number;
+    products:Product[]
+}

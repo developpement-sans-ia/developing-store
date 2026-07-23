@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { Product } from '../../features/product/product';
+import { Product } from '../types';
 import { ProductService } from '../services/product-service/product-service';
 
 

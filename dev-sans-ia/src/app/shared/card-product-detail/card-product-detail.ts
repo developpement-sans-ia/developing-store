@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
+import { Product } from '../../features/product/product';
+import { ProductService } from '../services/product-service/product-service';
+
 
 @Component({
   selector: 'app-card-product-detail',
@@ -6,4 +9,17 @@ import { Component } from '@angular/core';
   templateUrl: './card-product-detail.html',
   styleUrl: './card-product-detail.css',
 })
-export class CardProductDetail {}
+export class CardProductDetail implements OnInit {
+  //productSelected = input.required<Product[]>();
+  private readonly productService = inject(ProductService);
+  private product = this.productService.productListSignal;
+  currentProduct = signal<Product[]>([]);
+
+
+  ngOnInit() {
+
+  }
+
+
+
+}

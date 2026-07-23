@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Service, signal } from "@angular/core";
-import { map, Observable, tap, } from "rxjs";
-import { Product } from "../../types";
+import { Observable, tap } from "rxjs";
+import { Product } from "./types";
 
 @Service()
 export class ProductService {
@@ -18,7 +18,7 @@ export class ProductService {
     }
 
     getOneProduct(id:string):Observable<Product>{
-        return this.http.get<Product>(this.url+`/${id}`)
+        return this.http.get<Product>(`${this.url}/${id}`)
         .pipe(tap((response: Product)=>this.product.set(response)));
     }
 }

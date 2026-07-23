@@ -1,0 +1,45 @@
+
+<!-- filter desktop -->
+<section>
+    <p>filter product</p>
+    <div>
+        @for (option of categoryList; track option){
+            <input type="radio" [(ngModel)]="categorySelected" name="category" [value]="option.value">
+            <label for="option.value">{{option.valueName}}</label>
+        }
+    </div>
+    <div>
+       @for (option of categoryList; track option){
+            <input type="radio" [(ngModel)]="priceSelected" name="price" [value]="option.value">
+            <label for="option.value">{{option.valueName}}</label>
+        }
+    </div>
+</section>
+
+<!-- filter mobile -->
+<section>
+    <p>filter product</p>
+    <div>
+        <div>
+          <select [(ngModel)]="categorySelected">
+            @for (option of categoryList; track option){
+              <option [value]="option.value">{{option.valueName}}</option>
+            }
+          </select>
+        </div>
+        <div>
+          <select [(ngModel)]="priceSelected">
+            @for (option of priceList; track option){
+              <option [value]="option.value">{{option.valueName}}</option>
+            }
+          </select>
+        </div>
+    </div>
+</section>
+
+<section>
+    @for (product of productList(); track product.id){
+        <app-card-product [product]="product"/>
+    }
+</section>
+

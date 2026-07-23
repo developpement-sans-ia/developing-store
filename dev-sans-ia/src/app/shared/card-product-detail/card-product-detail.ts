@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, input, output, signal } from '@angular/core';
 import { Product } from '../types';
 import { ProductService } from '../services/product-service/product-service';
 
@@ -9,16 +9,9 @@ import { ProductService } from '../services/product-service/product-service';
   templateUrl: './card-product-detail.html',
   styleUrl: './card-product-detail.css',
 })
-export class CardProductDetail implements OnInit {
-  //productSelected = input.required<Product[]>();
-  private readonly productService = inject(ProductService);
-  private product = this.productService.productListSignal;
-  currentProduct = signal<Product[]>([]);
-
-
-  ngOnInit() {
-
-  }
+export class CardProductDetail {
+  product = input.required<Product>();
+  close = output<void>();
 
 
 

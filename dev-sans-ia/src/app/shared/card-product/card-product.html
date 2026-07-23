@@ -1,7 +1,6 @@
-
-<section>
+<section class="cursor-pointer">
     <div>
-        <img [src]="product().image" />
+        <img [src]="product().image" (click)="selectProduct.emit(product())" />
     </div>
     <div>
         <p>{{product().title}}</p>

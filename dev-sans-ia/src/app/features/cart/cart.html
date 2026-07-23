@@ -1,1 +1,21 @@
-<p>cart works!</p>
+<section class=" bg-grisAnthracite flex flex-col items-center">
+	<h1 class="text-[#FFFFFF] text-[5rem] font-bodoniModa">Panier</h1>
+	<div class="grid grid-cols-2 gap-[20rem] m-4">
+		<ul class="h-screen overflow-scroll">
+			@for(article of cart; track article){
+				<li class="mb-4"><app-card-product-detail></app-card-product-detail></li>
+			}
+		</ul>
+		<div class="bg-grisClair flex flex-col p-6">
+			<span class="flex justify-between gap-3">
+				<p>Frais de livraison</p>
+				<p>OFFERT</p>
+			</span>
+			<span class="flex justify-between gap-3">
+				<p>Prix Total</p>
+				<p>200 000€</p>
+			</span>
+			<button class="bg-grisAnthracite text-blancCasse">Panier</button>
+		</div>
+	</div>
+</section>

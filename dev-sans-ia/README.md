@@ -18,6 +18,41 @@ Les produits sont récupérés dynamiquement depuis l'API publique [FakeStoreAPI
 
 ---
 
+### Structure du projet (`dev-sans-ia/`)
+
+```text
+dev-sans-ia/
+├── public/                          # Assets statiques (favicon, etc.)
+├── src/
+│   ├── app/
+│   │   ├── features/                # Pages / vues de l'application
+│   │   │   ├── cart/                # Page panier
+│   │   │   ├── home/                # Page d'accueil
+│   │   │   ├── page404/             # Page 404
+│   │   │   └── product/             # Page produit
+│   │   │       └── modal/           # Modale produit
+│   │   ├── shared/                  # Éléments réutilisables
+│   │   │   ├── card-product/        # Composant carte produit
+│   │   │   ├── card-product-detail/ # Composant détail produit
+│   │   │   ├── footer/              # Composant footer
+│   │   │   ├── header/              # Composant header
+│   │   │   ├── services/
+│   │   │   │   ├── cart-service/    # Service de gestion du panier
+│   │   │   │   └── product-service/ # Service de récupération des produits (FakeStoreAPI)
+│   │   │   └── types.ts             # Interfaces / types partagés
+│   │   ├── app.ts                   # Composant racine
+│   │   ├── app.routes.ts            # Configuration des routes
+│   │   └── app.config.ts            # Configuration de l'application
+│   ├── index.html
+│   ├── main.ts                      # Point d'entrée (client)
+│   ├── main.server.ts               # Point d'entrée (SSR)
+│   └── styles.css                   # Styles globaux (Tailwind)
+├── angular.json                     # Configuration Angular CLI
+├── package.json
+└── tsconfig*.json                   # Configurations TypeScript
+```
+---
+
 ## Technologies utilisées
 
 - [Angular](https://angular.dev/) 22 (+ SSR)
@@ -100,6 +135,32 @@ ng lint      # Vérifie le style du code (si configuré)
 
 ---
 
+## Organisation des pages
+
+Schéma des pages prévues et de leur navigation (basé sur les vues du dossier `features/`) :
+
+```mermaid
+flowchart LR
+    Home["Accueil ( / )"] --> Product["Fiche produit ( /product/:id )"]
+    Product --> Modal["Modale produit"]
+    Home --> Cart["Panier ( /cart )"]
+    Product --> Cart
+    Home --> NotFound["404 ( ** )"]
+
+    Header[Header] -.présent sur toutes les pages.-> Home
+    Footer[Footer] -.présent sur toutes les pages.-> Home
+```
+
+> ⚠️ Le routing (`app.routes.ts`) n'est pas encore câblé — ce schéma représente l'architecture cible d'après les vues déjà créées (`home`, `product`, `product/modal`, `cart`, `page404`). À mettre à jour dès que les routes sont définies.
+
+## Gestion de projet
+
+- **Suivi des tâches** : [Tableau Trello](https://trello.com/invite/b/6a60b501e450325fd477a727/ATTI20a4e6ffa4156e2869a3c676f38f564558780504/developpement-dun-store-sans-ia) — répartition des tâches entre les 5 membres de l'équipe, suivi de l'avancement par fonctionnalité.
+- **Slides de présentation** : [Présentation du projet](https://docs.google.com/presentation/d/1kiOZJKM9v94lLBBvEVaEUfhDg47kZTVnbhCbRMHNskw/edit?usp=sharing) — organisation de l'équipe, maquettes, choix techniques, démo, retour d'expérience.
+- Détails de l'organisation (répartition des tâches, méthode de travail, temps passés) : voir le [Wiki](https://github.com/developpement-sans-ia/developing-store/wiki).
+
+---
+
 ## Organisation du dépôt
 
 - `dev-sans-ia/` — application Angular
@@ -107,6 +168,7 @@ ng lint      # Vérifie le style du code (si configuré)
   - `main` (stable), 
   - `develop` (intégration),
   - `feat/*` (fonctionnalités) — détails sur le [Wiki](https://github.com/developpement-sans-ia/developing-store/wiki)
+
 
 ---
 

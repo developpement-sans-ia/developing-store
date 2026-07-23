@@ -7,10 +7,6 @@ import { CardProductDetail } from '../../shared/card-product-detail/card-product
   templateUrl: './cart.html',
   styleUrl: './cart.css',
 })
-<<<<<<< HEAD
 export class Cart {
   cart = [2,2,2];
 }
-=======
-export class Cart { }
->>>>>>> develop

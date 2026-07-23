@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-<section class=" bg-grisAnthracite h-screen flex flex-col items-center">
+<section class=" bg-grisAnthracite flex flex-col items-center">
 	<h1 class="text-[#FFFFFF] text-[5rem]">Panier</h1>
 	<div class="grid grid-cols-2 gap-[20rem]">
 		<ul>
-			@for( article of cart; track article){
-				<li><app-card-product-detail/></li>
+			@for(article of cart; track article){
+				<li><app-card-product-detail></app-card-product-detail></li>
 			}
 		</ul>
 		<div class="bg-grisClair flex flex-col p-6">
@@ -20,6 +19,3 @@
 		</div>
 	</div>
 </section>
-=======
-<p>cart works!</p>
->>>>>>> develop

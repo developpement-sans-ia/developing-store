@@ -1,6 +1,6 @@
 
 <!-- filter desktop -->
-<section>
+<section class="text-white">
     <p>filter product</p>
     <div>
         @for (option of categoryList; track option){
@@ -14,10 +14,11 @@
             <label for="option.value">{{option.valueName}}</label>
         }
     </div>
+    <button (click)="filterProduct()" >filter</button>
 </section>
 
 <!-- filter mobile -->
-<section>
+<section class="text-white">
     <p>filter product</p>
     <div>
         <div>
@@ -35,9 +36,10 @@
           </select>
         </div>
     </div>
+    <button (click)="filterProduct()" >filter</button>
 </section>
 
-<section>
+<section class="text-white">
     @for (product of productList(); track product.id){
         <app-card-product [product]="product"/>
     }

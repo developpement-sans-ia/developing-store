@@ -31,7 +31,7 @@ export class ProductService {
                 return response;
             }else if(category==""){
                 response.forEach((res)=>{
-                    if(res.price==price){
+                    if(res.price<=price){
                         listefiltered.push(res);
                     }
                 })
@@ -48,7 +48,7 @@ export class ProductService {
             }else{
                 response.forEach((res)=>{                
                     if(res.category==category){
-                        if(res.price==price){
+                        if(res.price<=price){
                             listefiltered.push(res);
                         }
                     }

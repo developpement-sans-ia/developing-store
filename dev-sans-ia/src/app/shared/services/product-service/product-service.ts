@@ -21,4 +21,41 @@ export class ProductService {
         return this.http.get<Product>(this.url+`/${id}`)
         .pipe(tap((response: Product)=>this.product.set(response)));
     }
+
+    getProductListFiltered(category:string,price:number): Observable<Product[]>{
+        return this.http.get<Product[]>(this.url)
+        .pipe(map((response : Product[])=> {
+            let listefiltered:Array<Product> = [];
+            if(category==""&&price==0){
+                this.productList.set(response);
+                return response;
+            }else if(category==""){
+                response.forEach((res)=>{
+                    if(res.price==price){
+                        listefiltered.push(res);
+                    }
+                })
+                this.productList.set(listefiltered);
+                return listefiltered;
+            }else if(price==0){
+                response.forEach((res)=>{
+                    if(res.category==category){
+                        listefiltered.push(res);
+                    }
+                })
+                this.productList.set(listefiltered);
+                return listefiltered;
+            }else{
+                response.forEach((res)=>{                
+                    if(res.category==category){
+                        if(res.price==price){
+                            listefiltered.push(res);
+                        }
+                    }
+                })
+                this.productList.set(listefiltered);
+                return listefiltered;
+            } 
+        }));
+    }
 }

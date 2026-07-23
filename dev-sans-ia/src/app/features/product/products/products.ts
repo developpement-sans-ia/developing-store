@@ -1,6 +1,6 @@
 import { Component, OnInit, signal, inject } from '@angular/core';
 import { CardProduct } from '../../../shared/card-product/card-product';
-import { ProductService } from '../../../shared/product-service';
+import { ProductService } from '../../../shared/services/product-service/product-service';
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 @Component({
@@ -14,7 +14,7 @@ export class Products implements OnInit{
   readonly productList = this.productService.productListSignal;
 
   categorySelected:string="";
-  priceSelected:string="";
+  priceSelected:number=0;
 
   categoryList=[
     {value:"", valueName:"category"},
@@ -25,10 +25,11 @@ export class Products implements OnInit{
   ]
 
   priceList=[
-    {value:"", valueName:"price"},
-    {value:"50", valueName:"<50€"},
-    {value:"100", valueName:"<100€"},
-    {value:"100", valueName:"<100€"},
+    {value:0, valueName:"price"},
+    {value:50, valueName:"<50€"},
+    {value:100, valueName:"<100€"},
+    {value:500, valueName:"<500€"},
+    {value:1000, valueName:"<1000€"},
   ]
 
   ngOnInit(){
@@ -36,6 +37,6 @@ export class Products implements OnInit{
   }
 
   filterProduct(){
-    // WIP 
+    this.productService.getProductListFiltered(this.categorySelected,this.priceSelected).subscribe();
   }
 }

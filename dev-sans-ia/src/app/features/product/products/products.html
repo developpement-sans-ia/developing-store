@@ -9,7 +9,7 @@
         }
     </div>
     <div>
-       @for (option of categoryList; track option){
+       @for (option of priceList; track option){
             <input type="radio" [(ngModel)]="priceSelected" name="price" [value]="option.value">
             <label for="option.value">{{option.valueName}}</label>
         }

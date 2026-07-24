@@ -1,13 +1,48 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>DevSansIa</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>Nova Market</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Pontano+Sans:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- CDN Tailwinds CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Theme custom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: '#111827',
+                        grisAnthracite: '#1f2937',
+                        dore: '#d4af37',
+						grisClair: '#e5e7eb',
+						blancCasse: '#f9fafb'
+                    },
+                    backgroundImage: {
+                    },
+                    fontFamily: {
+                        bodoniModa: ['"Bodoni Moda"', 'serif'],
+                        pontanoSans: ['"Pontano Sans"', 'sans-serif']
+                    },
+                }
+            }
+        }
+    </script>
+
 </head>
-<body>
+<body class="bg-grisAnthracite font-pontanoSans">
   <app-root></app-root>
 </body>
+
 </html>

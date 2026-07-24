@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Product } from '../types';
+
 
 @Component({
   selector: 'app-card-product',
@@ -6,4 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './card-product.html',
   styleUrl: './card-product.css',
 })
-export class CardProduct {}
+export class CardProduct {
+  product = input.required<Product>();
+}

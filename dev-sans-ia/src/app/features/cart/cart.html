@@ -1,5 +1,5 @@
 <section class=" bg-grisAnthracite flex flex-col items-center">
-	<h1 class="text-[#FFFFFF] text-[5rem] font-bodoniModa">Panier</h1>
+	<h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Panier</h1>
 	<div class="grid grid-cols-2 gap-[20rem] m-4">
 		<ul class="h-screen overflow-scroll">
 			@for(article of cart().products; track article){
@@ -8,14 +8,14 @@
 		</ul>
 		<div class="bg-grisClair flex flex-col p-6">
 			<span class="flex justify-between gap-3">
-				<p>Frais de livraison</p>
-				<p>OFFERT</p>
+				<p class="py-1">Frais de livraison</p>
+				<p >OFFERT</p>
 			</span>
-			<span class="flex justify-between gap-3">
-				<p>Prix Total</p>
-				<p>200 000€</p>
+			<span class="flex justify-between gap-3 font-bold">
+				<p class="py-1">Prix Total</p>
+				<p class="py-1">200 000€</p>
 			</span>
-			<button class="bg-grisAnthracite text-blancCasse">Panier</button>
+			<button class="bg-grisAnthracite text-blancCasse my-5 py-2">Panier</button>
 		</div>
 	</div>
 </section>

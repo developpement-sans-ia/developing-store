@@ -7,8 +7,10 @@ export class CartService {
     private cart = signal<CartInt>({} as CartInt);
     readonly cartSignal = this.cart.asReadonly();
 
-    addToCart(product:Product){
-        this.cart().products.push(product);
+    addToCart(product:Product | null){
+        if(product!= null){
+            this.cart().products.push(product)
+        }
     }
 
     removeFromCart(product:Product){
@@ -18,11 +20,19 @@ export class CartService {
     }
 
     saveToLocalStorage(){
-        localStorage.setItem("cart", JSON.stringify(this.cart));
+        localStorage.setItem("cart", JSON.stringify(this.cart()));
     }
     
     loadFromLocalStorage(){
         const item = localStorage.getItem("cart");
         item ? this.cart.set(JSON.parse(item)) : null;
+    }
+
+    setCart(){
+        this.cart.set({
+            id:100,
+            userId:100,
+            products:[],
+        })
     }
 }

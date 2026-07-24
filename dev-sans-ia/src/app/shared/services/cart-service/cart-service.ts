@@ -18,7 +18,7 @@ export class CartService {
         .products.filter((ele, ind) => ind !== this.cart()
         .products.findIndex((prod : Product) => prod = product));
     }
-
+    
     saveToLocalStorage(){
         localStorage.setItem("cart", JSON.stringify(this.cart()));
     }

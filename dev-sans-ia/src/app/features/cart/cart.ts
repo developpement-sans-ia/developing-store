@@ -24,4 +24,10 @@ export class Cart implements OnInit {
       this.cart().products.forEach((product)=>{this.total+= product.price})
     }
   }
+
+  removeFromCart(article:Product){
+    this.cartService.removeFromCart(article);
+    this.cartService.saveToLocalStorage();
+    this.total-=article.price;
+  }
 }

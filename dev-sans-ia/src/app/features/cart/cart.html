@@ -7,6 +7,7 @@
 			<ul class="h-screen overflow-scroll">
 				@for(article of cart().products; track article){
 				<li class="mb-4"><app-card-product-detail [product]="article"></app-card-product-detail></li>
+				<button (click)="removeFromCart(article)">Retirer du panier</button>
 				}
 			</ul>
 		}

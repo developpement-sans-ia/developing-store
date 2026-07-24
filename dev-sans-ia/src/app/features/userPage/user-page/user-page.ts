@@ -19,6 +19,7 @@ export class UserPage {
     password:""
   });
   logIn = false;
+  badId= false;
 
   loginForm = form(this.loginModel);
 
@@ -26,7 +27,11 @@ export class UserPage {
     this.userService.
     getUser(this.loginForm.email().value(),this.loginForm.password().value())
     .subscribe();
-    this.logIn = true;
+    console.log();
+    if(this.user().username!=undefined){
+      this.logIn = true;
+    }
+    this.badId = true;
   }
   
 }

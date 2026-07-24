@@ -15,10 +15,15 @@
     </label>
   </div>
 
+  <p [ngClass]="{
+    'hidden': badId == false
+  }">Identdifiant et/ou Mdp incorrects</p>
+
 </form>
 
-<button (click)="login()"
-routerLink="/userlogedin"
+<button (click)="login()" [ngClass]="{
+  'hidden': logIn == true
+}"
 >Log in</button>
 
 @if(logIn == true){

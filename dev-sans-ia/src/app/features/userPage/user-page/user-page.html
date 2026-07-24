@@ -1,0 +1,31 @@
+<form [ngClass]="{
+  'hidden': logIn == true
+}">
+  <div>
+    <label>
+      Email
+      <input type="email" [formField]="loginForm.email" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Password
+      <input type="password" [formField]="loginForm.password" />
+    </label>
+  </div>
+
+  <p [ngClass]="{
+    'hidden': badId == false
+  }">Identdifiant et/ou Mdp incorrects</p>
+
+</form>
+
+<button (click)="login()" [ngClass]="{
+  'hidden': logIn == true
+}"
+>Log in</button>
+
+@if(logIn == true){
+  <app-user-page-detail [user]="user()"></app-user-page-detail>
+}

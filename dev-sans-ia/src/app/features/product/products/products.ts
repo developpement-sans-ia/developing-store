@@ -5,6 +5,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, FormsModule } from '@angul
 import { Product } from '../../../shared/types';
 import { CardProductDetail } from '../../../shared/card-product-detail/card-product-detail';
 import { Modal } from '../modal/modal';
+import { CartService } from '../../../shared/services/cart-service/cart-service';
+import { CartInt } from '../../../shared/types';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +15,9 @@ import { Modal } from '../modal/modal';
   styleUrl: './products.css',
 })
 export class Products implements OnInit {
+  private readonly cartService = inject(CartService);
   private readonly productService = inject(ProductService);
+  readonly cart = this.cartService.cartSignal;
   readonly productList = this.productService.productListSignal;
 
   categorySelected: string = "";
@@ -37,6 +41,10 @@ export class Products implements OnInit {
 
   ngOnInit() {
     this.productService.getProductList().subscribe();
+    this.cartService.loadFromLocalStorage();
+    if(this.cart().id==null){
+      this.cartService.setCart();
+    } 
   }
 
   filterProduct() {
@@ -54,6 +62,12 @@ export class Products implements OnInit {
   closeModal() {
     this.selectedProduct.set(null);
     document.body.style.overflow = 'auto';
+  }
+
+  addToCart(){
+    this.cartService.addToCart(this.selectedProduct());
+    this.cartService.saveToLocalStorage();
+    console.log(this.cartService.cartSignal());
   }
 
 }

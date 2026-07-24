@@ -1,22 +1,22 @@
-<header class="bg-blancCasse text-noir font-bodoniModa  items-center p-5">
+<header class="bg-blancCasse text-noir font-bodoniModa  items-center p-5 border-b-4 border-b-dore">
     <div class="flex justify-between">
         <!-- Nom + logo marque -->
         <div>
-            <a routerLink="/">
+            <a routerLink="/" class="text-xl">
                 <h3>Nova Market</h3>
             </a>
         </div>
         <!-- Navigation -->
-        <div>
+        <div class="hidden md:block">
             <nav >
-                <ul class="inline-flex">
-                    <li>
+                <ul class="inline-flex items-center">
+                    <li class="me-5">
                         <a routerLink="/">
                             Accueil
                         </a>
                     </li>
-                    <li> • </li>
-                    <li>
+                    <li class="ms-5 me-5"> • </li>
+                    <li class="ms-5">
                         <a routerLink="/product">
                             Produits
                         </a>
@@ -24,19 +24,27 @@
                 </ul>
             </nav>
         </div>
-        <!-- Icones : panier / menu burger -->
-        <div>
-            <a routerLink="/cart">
-                <img src="./images/shopping-bag.png" alt="shopping bag" class="h-[30px]">
-            </a>
+        <!-- Icones : panier / user -->
+        <div class="inline-flex">
+                <div class="border-2 border-dore rounded-4xl me-5">
+                    <a routerLink="/user" >
+                        <img src="./images/user.png" alt="user profile" class="h-[30px] p-1 m-1">
+                    </a>
+                 </div>
+            <div class="border-2 border-dore rounded-4xl">
+                <a routerLink="/cart" >
+                    <img src="./images/shopping-bag.png" alt="shopping bag" class="h-[30px] p-1 m-1">
+                </a>
+            </div>
         </div>
+ 
         <!-- Menu burger for mobile -->
-        <div>
+        <!-- <div>
             <a class="">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256">
                     <g fill="#111827" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M3,7c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h24c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,14c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h24c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587zM3,21c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h24c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587z"></path></g></g>
                  </svg>
             </a>
-        </div>
+        </div> -->
     </div>
 </header>

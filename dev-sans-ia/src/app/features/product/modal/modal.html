@@ -1,1 +1,17 @@
-<p>modal works!</p>
+<!--Overlay sombre-->
+<div class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+    (click)="close.emit()">
+
+
+    <div class="bg-grisClair p-6 border border-dore relative w-full max-w-5xl max-h-[90vh] overflow-y-auto"
+        (click)="$event.stopPropagation()">
+        <!-- Bouton Fermer -->
+        <button
+            class="absolute top-2 right-2 w-10 h-10 flex items-center justify-center bg-grisAnthracite text-blancCasse border border-dore hover:bg-dore hover:text-blancCassé transition-colors z-10"
+            (click)="close.emit()" title="Fermer">
+            ✕
+        </button>
+
+        <ng-content></ng-content>
+    </div>
+</div>

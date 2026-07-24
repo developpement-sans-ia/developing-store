@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Product } from '../types';
 
 
@@ -10,4 +10,7 @@ import { Product } from '../types';
 })
 export class CardProduct {
   product = input.required<Product>();
+
+  //Pour la modale
+  selectProduct = output<Product>();
 }

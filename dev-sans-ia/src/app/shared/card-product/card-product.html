@@ -1,10 +1,12 @@
-
-<article class="flex flex-col bg-blancCasse">
-    <div class="aspect-square bg-grisClair overflow-hidden flex items-center justify-center">
-        <img [src]="product().image" [alt]="product().title" class="w-full h-full object-contain p-6" />
+<section class="bg-blancCasse border border-dore cursor-pointer animate-fade-in-up">
+    <div class="container text-center gap-4">
+        <div>
+            <img [src]=" product().image" (click)="selectProduct.emit(product())"
+                class="aspect-[8/10] object-contain" />
+        </div>
+        <div class="bg-grisClair p-4">
+            <p class="font-pontanoSans text-noir text-center lg:truncate md:truncate">{{product().title}}</p>
+            <p class="font-bodoniModa text-dore text-center font-semibold">{{product().price}} €</p>
+        </div>
     </div>
-    <div class="bg-grisClair p-4 text-center">
-        <p class="font-pontanoSans text-noir truncate">{{product().title}}</p>
-        <p class="font-bodoniModa text-dore font-semibold">{{product().price}} €</p>
-    </div>
-</article>
+</section>

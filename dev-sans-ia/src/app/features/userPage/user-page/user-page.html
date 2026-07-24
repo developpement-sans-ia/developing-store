@@ -1,0 +1,39 @@
+<section class="flex flex-col items-center">
+	<div>
+		<h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Profil</h1>
+	</div>
+	<div class="bg-grisClair text-noir p-3 m-5">
+		<form [ngClass]="{
+		'hidden': logIn == true
+		}">
+		<div class="my-3">
+			<label class="flex justify-between items-center">
+			Email
+			<input type="email" [formField]="loginForm.email" placeholder="johndoe@xyz.com" class="border-2 border-dore bg-blancCasse ms-3 p-1"/>
+			</label>
+		</div>
+
+		<div class="my-3">
+			<label class="flex justify-between items-center">
+			Mot de passe
+			<input type="password" [formField]="loginForm.password" placeholder="JohnDoe11" class="border-2 border-dore bg-blancCasse ms-3 p-1"/>
+			</label>
+		</div>
+
+		<p [ngClass]="{
+			'hidden': badId == false
+		}" class="text-red-900">Identifiant ou mot de passe incorrects.</p>
+
+		</form>
+
+		<button (click)="login()" class="bg-grisAnthracite text-blancCasse w-full my-2 py-2" [ngClass]="{
+		'hidden': logIn == true
+		}"
+		>Se connecter</button>
+
+		@if(logIn == true){
+		<app-user-page-detail [user]="user()"></app-user-page-detail>
+		}
+	</div>
+	
+</section>

@@ -3,7 +3,7 @@
 	<div class="grid grid-cols-2 gap-[20rem] m-4">
 		<ul class="h-screen overflow-scroll">
 			@for(article of cart; track article){
-				<li class="mb-4"><app-card-product-detail></app-card-product-detail></li>
+			<li class="mb-4"><app-card-product-detail [product]="product()"></app-card-product-detail></li>
 			}
 		</ul>
 		<div class="bg-grisClair flex flex-col p-6">

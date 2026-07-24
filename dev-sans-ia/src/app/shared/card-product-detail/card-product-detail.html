@@ -1,19 +1,28 @@
-<div class="class flex justify-center">
-    <div class="bg-grisClair p-6 border border-dore grid lg:grid-cols-2 gap-5 p-2">
-        <img class="object-cover bg-white" src="" alt="ici une image">
-        <div class="flex flex-col justify-center p-4">
-            <h5 class="mb-6 text-3xl text-dore font-bodoniModa uppercase align-center">Produit</h5>
-            <p class="mb-6 text-small">Categorie.</p>
-            <p class="mb-6 text-small">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
-                adipisci velit....</p>
+<!-- Image -->
+<div class="grid lg:grid-cols-2 gap-5 w-full" (click)="openDetail.emit(product())">
+    <img class="object-cover" [src]="product().image" [alt]="product().title">
 
-            <p class="mb-6 text-xl">Prix.</p>
-            <div>
-                <button type="button"
-                    class="inline-flex items-center text-white bg-grisAnthracite box-border border-dore p-3">
-                    Ajouter au panier
-                </button>
-            </div>
-        </div>
+    <!-- Détails -->
+    <div class="flex flex-col justify-center p-4">
+        <h5 class="mb-6 text-3xl text-dore font-bodoniModa uppercase text-center lg:text-left">
+            {{ product().title }}
+        </h5>
+
+        <!-- Catégorie -->
+        <p class="mb-6 text-sm uppercase tracking-widest text-gray-500">
+            {{ product().category }}
+        </p>
+
+        <!-- Description -->
+        <p class="mb-6 text-sm flex-grow">
+            {{ product().description }}
+        </p>
+
+        <!-- Prix -->
+        <p class="mb-6 text-xl font-bold">
+            {{ product().price }} €
+        </p>
+
+
     </div>
 </div>

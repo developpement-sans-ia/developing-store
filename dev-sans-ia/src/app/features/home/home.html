@@ -1,1 +1,26 @@
-<p>home works!</p>
+<!-- Hero -->
+<section class="border-t-4 border-dore">
+    <div class="relative aspect-[4/3] md:aspect-[21/9] w-full bg-grisAnthracite bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('/images/hero.jpg');">
+        <div class="text-center text-blancCasse px-4">
+            <h1 class="font-bodoniModa text-4xl md:text-6xl mb-4">Lorem Ipsum</h1>
+            <a routerLink="/product" class="font-pontanoSans text-sm md:text-base underline underline-offset-4 hover:text-dore transition-colors">
+                Découvrir
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Dernières nouveautés -->
+<section class="bg-noir border-b-4 border-dore py-16 px-6">
+    <div class="text-center mb-10">
+        <h2 class="font-bodoniModa text-2xl text-blancCasse inline-block border-b-2 border-dore pb-2">
+            Dernières nouveautés
+        </h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        @for (product of latestProducts(); track product.id) {
+            <app-card-product [product]="product" />
+        }
+    </div>
+</section>

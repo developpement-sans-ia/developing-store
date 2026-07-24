@@ -1,51 +1,63 @@
-
 <!-- filter desktop -->
 <div class="flex flex-col items-center">
   <h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Produits</h1>
 </div>
 <section class="text-white">
-    
-    <p>filter product</p>
-    <div>
-        @for (option of categoryList; track option){
-            <input type="radio" [(ngModel)]="categorySelected" name="category" [value]="option.value">
-            <label for="option.value">{{option.valueName}}</label>
-        }
-    </div>
-    <div>
-       @for (option of priceList; track option){
-            <input type="radio" [(ngModel)]="priceSelected" name="price" [value]="option.value">
-            <label for="option.value">{{option.valueName}}</label>
-        }
-    </div>
-    <button (click)="filterProduct()" >filter</button>
+  <p>filter product</p>
+  <div>
+    @for (option of categoryList; track option){
+    <input type="radio" [(ngModel)]="categorySelected" name="category" [value]="option.value">
+    <label for="option.value">{{option.valueName}}</label>
+    }
+  </div>
+  <div>
+    @for (option of priceList; track option){
+    <input type="radio" [(ngModel)]="priceSelected" name="price" [value]="option.value">
+    <label for="option.value">{{option.valueName}}</label>
+    }
+  </div>
+  <button (click)="filterProduct()">filter</button>
 </section>
 
 <!-- filter mobile -->
 <section class="text-white">
-    <p>filter product</p>
+  <p>filter product</p>
+  <div>
     <div>
-        <div>
-          <select [(ngModel)]="categorySelected">
-            @for (option of categoryList; track option){
-              <option [value]="option.value">{{option.valueName}}</option>
-            }
-          </select>
-        </div>
-        <div>
-          <select [(ngModel)]="priceSelected">
-            @for (option of priceList; track option){
-              <option [value]="option.value">{{option.valueName}}</option>
-            }
-          </select>
-        </div>
+      <select [(ngModel)]="categorySelected">
+        @for (option of categoryList; track option){
+        <option [value]="option.value">{{option.valueName}}</option>
+        }
+      </select>
     </div>
-    <button (click)="filterProduct()" >filter</button>
+    <div>
+      <select [(ngModel)]="priceSelected">
+        @for (option of priceList; track option){
+        <option [value]="option.value">{{option.valueName}}</option>
+        }
+      </select>
+    </div>
+  </div>
+  <button (click)="filterProduct()">filter</button>
 </section>
 
 <section class="text-white">
-    @for (product of productList(); track product.id){
-        <app-card-product [product]="product"/>
-    }
+  @for (product of productList(); track product.id){
+  <app-card-product [product]="product" (selectProduct)="openModal($event)" />
+  }
 </section>
 
+<!-- Modale affichée si produit est sélectionné -->
+@if (selectedProduct(); as selected) {
+<app-modal (close)="closeModal()">
+
+  <app-card-product-detail [product]="selected" (close)="closeModal()" />
+
+  <div class="flex justify-center lg:justify-end mt-6">
+    <button type="button"
+      class="inline-flex items-center text-white bg-grisAnthracite border border-dore hover:bg-dore hover:text-blancCassé transition-colors p-3">
+      Ajouter au panier
+    </button>
+  </div>
+</app-modal>
+}

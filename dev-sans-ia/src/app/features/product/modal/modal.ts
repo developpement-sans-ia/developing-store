@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { Product } from '../../../shared/types';
 
 @Component({
   selector: 'app-modal',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './modal.html',
   styleUrl: './modal.css',
 })
-export class Modal {}
+export class Modal {
+
+  close = output<void>();
+}

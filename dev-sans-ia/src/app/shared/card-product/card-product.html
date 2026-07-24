@@ -1,10 +1,9 @@
-
-<section>
+<section class="cursor-pointer">
     <div>
-        <img [src]="product().image" />
+        <img [src]="product().image" (click)="selectProduct.emit(product())" />
     </div>
-    <div>
-        <p>{{product().title}}</p>
-        <p>{{product().price}} €</p>
+    <div class="bg-grisClair p-4 text-center">
+        <p class="font-pontanoSans text-noir truncate">{{product().title}}</p>
+        <p class="font-bodoniModa text-dore font-semibold">{{product().price}} €</p>
     </div>
 </section>

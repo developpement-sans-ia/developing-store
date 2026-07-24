@@ -2,26 +2,30 @@
 	<h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Panier</h1>
 	<div class="grid grid-cols-2 gap-[20rem] m-4">
 		@if(cart().products == undefined ){
-			<p class="text-blancCasse text-5xl">Panier Vide</p>
+		<p class="text-blancCasse text-5xl">Panier Vide</p>
 		}@else{
-			<ul class="h-screen overflow-scroll">
-				@for(article of cart().products; track article){
-				<li class="mb-4"><app-card-product-detail [product]="article"></app-card-product-detail></li>
-				<button (click)="removeFromCart(article)">Retirer du panier</button>
-				}
-			</ul>
+		<ul class="h-screen overflow-scroll">
+			@for(article of cart().products; track article){
+			<li class="mb-4"><app-card-product-detail [product]="article"></app-card-product-detail></li>
+			<button
+				class="inline-flex items-center text-noir bg-grisClair border border-dore hover:bg-dore hover:text-blancCassé transition-colors p-3"
+				(click)="removeFromCart(article)">Retirer du panier</button>
+			}
+		</ul>
 		}
-		
+
 		<div class="bg-grisClair flex flex-col p-6">
 			<span class="flex justify-between gap-3">
 				<p class="py-1">Frais de livraison</p>
-				<p >OFFERT</p>
+				<p>OFFERT</p>
 			</span>
 			<span class="flex justify-between gap-3 font-bold">
 				<p class="py-1">Prix Total</p>
 				<p class="py-1">{{total}}€</p>
 			</span>
-			<button class="bg-grisAnthracite text-blancCasse my-5 py-2">Panier</button>
+			<button
+				class="bg-grisAnthracite text-blancCasse border border-dore hover:bg-dore hover:text-blancCassé transition-colors p-3">Passer
+				au paiement</button>
 		</div>
 	</div>
 </section>

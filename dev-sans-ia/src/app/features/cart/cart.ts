@@ -16,9 +16,12 @@ export class Cart implements OnInit {
   cartService = inject(CartService);
   product = this.productService.productSignal;
   cart = this.cartService.cartSignal;
+  total:number = 0;
 
   ngOnInit(){
-    console.log(this.cart());
     this.cartService.loadFromLocalStorage();
+    if (this.cart().products != undefined) {
+      this.cart().products.forEach((product)=>{this.total+= product.price})
+    }
   }
 }

@@ -67,7 +67,7 @@ export class Products implements OnInit {
   addToCart(){
     this.cartService.addToCart(this.selectedProduct());
     this.cartService.saveToLocalStorage();
-    console.log(this.cartService.cartSignal());
+    //console.log(this.cartService.cartSignal());
   }
 
 }

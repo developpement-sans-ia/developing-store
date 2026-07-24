@@ -125,8 +125,8 @@ ng lint      # Vérifie le style du code (si configuré)
 ## Captures d'écran de la maquette
 
 <div align="center">
-  <img src="../Maquette/Header__Footer___Home_-_Desktop__Mobile.png" alt="Maquette Desktop" width="380" align="top">
-  <img src="../Maquette/Panier_-_Mobile.png" alt="Maquette Mobile" width="140" align="top">
+  <img src="./Maquette/Header__Footer___Home_-_Desktop__Mobile.png" alt="Maquette Desktop" width="380" align="top">
+  <img src="./Maquette/Panier_-_Mobile.png" alt="Maquette Mobile" width="140" align="top">
   <br>
   <sub><b>Desktop</b> · <b>Mobile</b></sub>
 </div>

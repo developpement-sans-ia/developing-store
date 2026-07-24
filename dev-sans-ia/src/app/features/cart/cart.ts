@@ -1,7 +1,8 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { CardProductDetail } from '../../shared/card-product-detail/card-product-detail'
 import { Product } from '../../shared/types';
 import { ProductService } from '../../shared/services/product-service/product-service';
+import { CartService } from '../../shared/services/cart-service/cart-service';
 
 
 @Component({
@@ -10,9 +11,14 @@ import { ProductService } from '../../shared/services/product-service/product-se
   templateUrl: './cart.html',
   styleUrl: './cart.css',
 })
-export class Cart {
+export class Cart implements OnInit {
   productService = inject(ProductService);
+  cartService = inject(CartService);
   product = this.productService.productSignal;
-  cart = [2, 2, 2];
+  cart = this.cartService.cartSignal;
 
+  ngOnInit(){
+    console.log(this.cart());
+    this.cartService.loadFromLocalStorage();
+  }
 }

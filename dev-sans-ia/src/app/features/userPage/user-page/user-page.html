@@ -7,29 +7,29 @@
 		'hidden': logIn == true
 		}">
 		<div class="my-3">
-			<label class="flex justify-between">
+			<label class="flex justify-between items-center">
 			Email
-			<input type="email" [formField]="loginForm.email" class="border-2 border-dore bg-blancCasse ms-3"/>
+			<input type="email" [formField]="loginForm.email" placeholder="johndoe@xyz.com" class="border-2 border-dore bg-blancCasse ms-3 p-1"/>
 			</label>
 		</div>
 
 		<div class="my-3">
-			<label class="flex justify-between">
-			Password
-			<input type="password" [formField]="loginForm.password" class="border-2 border-dore bg-blancCasse ms-3"/>
+			<label class="flex justify-between items-center">
+			Mot de passe
+			<input type="password" [formField]="loginForm.password" placeholder="JohnDoe11" class="border-2 border-dore bg-blancCasse ms-3 p-1"/>
 			</label>
 		</div>
 
 		<p [ngClass]="{
 			'hidden': badId == false
-		}">Identdifiant et/ou Mdp incorrects</p>
+		}" class="text-red-900">Identifiant ou mot de passe incorrects.</p>
 
 		</form>
 
 		<button (click)="login()" class="bg-grisAnthracite text-blancCasse w-full my-2 py-2" [ngClass]="{
 		'hidden': logIn == true
 		}"
-		>Log in</button>
+		>Se connecter</button>
 
 		@if(logIn == true){
 		<app-user-page-detail [user]="user()"></app-user-page-detail>

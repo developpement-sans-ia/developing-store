@@ -1,9 +1,12 @@
-<section class="cursor-pointer">
-    <div>
-        <img [src]="product().image" (click)="selectProduct.emit(product())" />
-    </div>
-    <div class="bg-grisClair p-4 text-center">
-        <p class="font-pontanoSans text-noir truncate">{{product().title}}</p>
-        <p class="font-bodoniModa text-dore font-semibold">{{product().price}} €</p>
+<section class="bg-blancCasse border border-dore">
+    <div class="container text-center gap-4">
+        <div>
+            <img [src]=" product().image" (click)="selectProduct.emit(product())"
+                class="aspect-[8/10] object-contain" />
+        </div>
+        <div class="bg-grisClair p-4">
+            <p class="font-pontanoSans text-noir text-center lg:truncate md:truncate">{{product().title}}</p>
+            <p class="font-bodoniModa text-dore text-center font-semibold">{{product().price}} €</p>
+        </div>
     </div>
 </section>

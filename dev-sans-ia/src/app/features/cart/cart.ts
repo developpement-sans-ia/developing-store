@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { CardProductDetail } from '../../shared/card-product-detail/card-product-detail'
-import { Product } from '../../shared/types';
+
 
 @Component({
   selector: 'app-cart',

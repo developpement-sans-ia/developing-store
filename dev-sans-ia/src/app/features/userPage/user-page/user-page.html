@@ -1,31 +1,39 @@
-<form [ngClass]="{
-  'hidden': logIn == true
-}">
-  <div>
-    <label>
-      Email
-      <input type="email" [formField]="loginForm.email" />
-    </label>
-  </div>
+<section class="flex flex-col items-center">
+	<div>
+		<h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Panier</h1>
+	</div>
+	<div class="bg-grisClair text-noir p-3 m-5">
+		<form [ngClass]="{
+		'hidden': logIn == true
+		}">
+		<div class="my-3">
+			<label class="flex justify-between">
+			Email
+			<input type="email" [formField]="loginForm.email" class="border-2 border-dore bg-blancCasse ms-3"/>
+			</label>
+		</div>
 
-  <div>
-    <label>
-      Password
-      <input type="password" [formField]="loginForm.password" />
-    </label>
-  </div>
+		<div class="my-3">
+			<label class="flex justify-between">
+			Password
+			<input type="password" [formField]="loginForm.password" class="border-2 border-dore bg-blancCasse ms-3"/>
+			</label>
+		</div>
 
-  <p [ngClass]="{
-    'hidden': badId == false
-  }">Identdifiant et/ou Mdp incorrects</p>
+		<p [ngClass]="{
+			'hidden': badId == false
+		}">Identdifiant et/ou Mdp incorrects</p>
 
-</form>
+		</form>
 
-<button (click)="login()" [ngClass]="{
-  'hidden': logIn == true
-}"
->Log in</button>
+		<button (click)="login()" class="bg-grisAnthracite text-blancCasse w-full my-2 py-2" [ngClass]="{
+		'hidden': logIn == true
+		}"
+		>Log in</button>
 
-@if(logIn == true){
-  <app-user-page-detail [user]="user()"></app-user-page-detail>
-}
+		@if(logIn == true){
+		<app-user-page-detail [user]="user()"></app-user-page-detail>
+		}
+	</div>
+	
+</section>

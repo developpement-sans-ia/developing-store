@@ -1,11 +1,16 @@
 <section class=" bg-grisAnthracite flex flex-col items-center">
 	<h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Panier</h1>
 	<div class="grid grid-cols-2 gap-[20rem] m-4">
-		<ul class="h-screen overflow-scroll">
-			@for(article of cart; track article){
-			<li class="mb-4"><app-card-product-detail [product]="product()"></app-card-product-detail></li>
-			}
-		</ul>
+		@if(cart().products == undefined ){
+			<p class="text-blancCasse text-5xl">Panier Vide</p>
+		}@else{
+			<ul class="h-screen overflow-scroll">
+				@for(article of cart().products; track article){
+				<li class="mb-4"><app-card-product-detail [product]="article"></app-card-product-detail></li>
+				}
+			</ul>
+		}
+		
 		<div class="bg-grisClair flex flex-col p-6">
 			<span class="flex justify-between gap-3">
 				<p class="py-1">Frais de livraison</p>
@@ -13,7 +18,7 @@
 			</span>
 			<span class="flex justify-between gap-3 font-bold">
 				<p class="py-1">Prix Total</p>
-				<p class="py-1">200 000€</p>
+				<p class="py-1">{{total}}€</p>
 			</span>
 			<button class="bg-grisAnthracite text-blancCasse my-5 py-2">Panier</button>
 		</div>

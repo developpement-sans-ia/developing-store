@@ -41,7 +41,7 @@
   <button (click)="filterProduct()">filter</button>
 </section>
 
-<section class="text-white">
+<section class="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto py-16 px-6">
   @for (product of productList(); track product.id){
   <app-card-product [product]="product" (selectProduct)="openModal($event)" />
   }

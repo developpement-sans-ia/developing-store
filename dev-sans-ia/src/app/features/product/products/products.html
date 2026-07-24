@@ -3,7 +3,7 @@
   <h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Produits</h1>
 </div>
 <section class="text-noir bg-grisClair  p-3 m-2">
-	<p class="font-bold">Filtres</p>
+	<p class="font-bold">Filtres des produits</p>
 		<div class="flex flex-row justify-between items-center">
 			<div class="pe-2 flex items-center">
 			@for (option of categoryList; track option){
@@ -22,18 +22,18 @@
 
 </section>
 
-<!-- filter mobile -->
+<!-- filter mobile
 <section class="text-noir bg-grisClair p-3 m-2 flex flex-col">
   <p class="font-bold">Filtres</p>
   <div>
-    <div>
+    <div class="bg-blancCasse p-1 my-3">
       <select [(ngModel)]="categorySelected">
         @for (option of categoryList; track option){
         <option [value]="option.value">{{option.valueName}}</option>
         }
       </select>
     </div>
-    <div>
+    <div class="bg-blancCasse p-1 my-3">
       <select [(ngModel)]="priceSelected">
         @for (option of priceList; track option){
         <option [value]="option.value">{{option.valueName}}</option>
@@ -41,8 +41,8 @@
       </select>
     </div>
   </div>
-  <button (click)="filterProduct()" class="bg-grisAnthracite text-blancCasse p-2">Activer les filtres</button>
-</section>
+  <button (click)="filterProduct()" class="bg-grisAnthracite text-blancCasse p-2">Filtrer/button>
+</section> -->
 
 <section class="text-white">
   @for (product of productList(); track product.id){

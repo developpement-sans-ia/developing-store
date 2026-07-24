@@ -8,7 +8,7 @@
 			@for(article of cart().products; track article){
 			<li class="mb-4"><app-card-product-detail [product]="article"></app-card-product-detail></li>
 			<button
-				class="inline-flex items-center text-noir bg-grisClair border border-dore hover:bg-dore hover:text-blancCassé transition-colors p-3"
+				class="inline-flex items-center text-noir bg-grisClair border border-dore hover:bg-dore hover:text-blancCassé transition-colors p-3 mb-6"
 				(click)="removeFromCart(article)">Retirer du panier</button>
 			}
 		</ul>
@@ -24,7 +24,7 @@
 				<p class="py-1">{{total}}€</p>
 			</span>
 			<button
-				class="bg-grisAnthracite text-blancCasse border border-dore hover:bg-dore hover:text-blancCassé transition-colors p-3">Passer
+				class="bg-grisAnthracite text-blancCasse border border-dore hover:bg-dore hover:text-blancCassé transition-colors mt-6 p-3">Passer
 				au paiement</button>
 		</div>
 	</div>

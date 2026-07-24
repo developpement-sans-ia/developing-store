@@ -156,7 +156,7 @@ flowchart LR
 ## Gestion de projet
 
 - **Suivi des tâches** : [Tableau Trello](https://trello.com/invite/b/6a60b501e450325fd477a727/ATTI20a4e6ffa4156e2869a3c676f38f564558780504/developpement-dun-store-sans-ia) — répartition des tâches entre les 5 membres de l'équipe, suivi de l'avancement par fonctionnalité.
-- **Slides de présentation** : [Présentation du projet](https://docs.google.com/presentation/d/1kiOZJKM9v94lLBBvEVaEUfhDg47kZTVnbhCbRMHNskw/edit?usp=sharing) — organisation de l'équipe, maquettes, choix techniques, démo, retour d'expérience.
+- **Slides de présentation** : [Présentation du projet](https://docs.google.com/presentation/d/15nB6zKnufRds7GJih67pHGldRO7wfYFMUSTVZd0S3ak/edit?usp=sharing) — organisation de l'équipe, maquettes, choix techniques, démo, retour d'expérience.
 - Détails de l'organisation (répartition des tâches, méthode de travail, temps passés) : voir le [Wiki](https://github.com/developpement-sans-ia/developing-store/wiki).
 
 ---

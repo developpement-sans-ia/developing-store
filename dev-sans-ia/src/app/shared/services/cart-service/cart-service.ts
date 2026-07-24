@@ -24,8 +24,10 @@ export class CartService {
     }
     
     loadFromLocalStorage(){
-        const item = localStorage.getItem("cart");
-        item ? this.cart.set(JSON.parse(item)) : null;
+        if (localStorage != undefined) {
+            const item = localStorage.getItem("cart");
+            item ? this.cart.set(JSON.parse(item)) : null;
+        }
     }
 
     setCart(){

@@ -11,7 +11,7 @@ import { ProductService } from '../services/product-service/product-service';
 })
 export class CardProductDetail {
   product = input.required<Product>();
-  close = output<void>();
+  openDetail = output<Product>();
 
 
 

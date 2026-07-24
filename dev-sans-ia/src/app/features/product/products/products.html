@@ -46,5 +46,15 @@
 
 <!-- Modale affichée si produit est sélectionné -->
 @if (selectedProduct(); as selected) {
-<app-card-product-detail [product]="selected" (close)="closeModal()" />
+<app-modal (close)="closeModal()">
+
+  <app-card-product-detail [product]="selected" (close)="closeModal()" />
+
+  <div class="flex justify-center lg:justify-end mt-6">
+    <button type="button"
+      class="inline-flex items-center text-white bg-grisAnthracite border border-dore hover:bg-dore hover:text-blancCassé transition-colors p-3">
+      Ajouter au panier
+    </button>
+  </div>
+</app-modal>
 }

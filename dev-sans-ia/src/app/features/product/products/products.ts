@@ -4,10 +4,11 @@ import { ProductService } from '../../../shared/services/product-service/product
 import { FormControl, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Product } from '../../../shared/types';
 import { CardProductDetail } from '../../../shared/card-product-detail/card-product-detail';
+import { Modal } from '../modal/modal';
 
 @Component({
   selector: 'app-products',
-  imports: [FormsModule, CardProduct, CardProductDetail],
+  imports: [FormsModule, CardProduct, CardProductDetail, Modal],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })

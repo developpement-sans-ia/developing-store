@@ -1,20 +1,20 @@
 <!-- Image -->
 <div class=" bg-blancCasse grid lg:grid-cols-2 gap-5 w-full" (click)="openDetail.emit(product())">
-    <img class="object-cover" [src]="product().image" [alt]="product().title">
+    <img class="object-cover hidden md:block" [src]="product().image" [alt]="product().title">
 
     <!-- Détails -->
     <div class="flex flex-col justify-center p-4">
-        <h5 class="mb-6 text-3xl text-dore font-bodoniModa uppercase text-center lg:text-left">
+        <h5 class="mb-6 text-xl md:text-3xl text-dore font-bodoniModa uppercase text-center lg:text-left">
             {{ product().title }}
         </h5>
 
         <!-- Catégorie -->
-        <p class="mb-6 text-sm uppercase tracking-widest text-gray-500">
+        <p class="mb-6 text-sm uppercase tracking-widest text-gray-500 hidden md:block">
             {{ product().category }}
         </p>
 
         <!-- Description -->
-        <p class="mb-6 text-sm flex-grow">
+        <p class="mb-6 text-sm flex-grow hidden md:block">
             {{ product().description }}
         </p>
 

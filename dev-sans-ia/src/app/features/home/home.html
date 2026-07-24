@@ -21,7 +21,7 @@
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         @for (product of latestProducts(); track product.id) {
-        <app-card-product [product]="product" />
+        <app-card-product [product]="product" routerLink="/product"/>
         }
     </div>
 </section>

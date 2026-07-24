@@ -2,35 +2,38 @@
 <div class="flex flex-col items-center">
   <h1 class="text-blancCasse text-5xl my-5 font-bodoniModa border-b-dore border-b-2">Produits</h1>
 </div>
-<section class="text-white">
-  <p>filter product</p>
-  <div>
-    @for (option of categoryList; track option){
-    <input type="radio" [(ngModel)]="categorySelected" name="category" [value]="option.value">
-    <label for="option.value">{{option.valueName}}</label>
-    }
-  </div>
-  <div>
-    @for (option of priceList; track option){
-    <input type="radio" [(ngModel)]="priceSelected" name="price" [value]="option.value">
-    <label for="option.value">{{option.valueName}}</label>
-    }
-  </div>
-  <button (click)="filterProduct()">filter</button>
+<section class="text-noir bg-grisClair  p-3 m-2">
+	<p class="font-bold">Filtres des produits</p>
+		<div class="flex flex-row justify-between items-center">
+			<div class="pe-2 flex items-center">
+			@for (option of categoryList; track option){
+			<input type="radio" [(ngModel)]="categorySelected" name="category" [value]="option.value" checked="" class="m-1 peer border-2 border-dore appearance-none w-4 h-4 rounded-full bg-blancCasse checked:bg-dore">
+			<label for="option.value" class="m-1">{{option.valueName}}</label>
+			}
+		</div>
+		<div class="ps-2 flex items-center">
+			@for (option of priceList; track option){
+			<input type="radio" [(ngModel)]="priceSelected" name="price" [value]="option.value" checked="" class="m-1 peer border-2 border-dore appearance-none w-4 h-4 rounded-full bg-blancCasse checked:bg-dore">
+			<label for="option.value" class="m-1">{{option.valueName}}</label>
+			}
+		</div>
+		<button (click)="filterProduct()" class="bg-grisAnthracite text-blancCasse py-2 px-4 ms-2">Filtrer</button>
+	</div>
+
 </section>
 
-<!-- filter mobile -->
-<section class="text-white">
-  <p>filter product</p>
+<!-- filter mobile
+<section class="text-noir bg-grisClair p-3 m-2 flex flex-col">
+  <p class="font-bold">Filtres</p>
   <div>
-    <div>
+    <div class="bg-blancCasse p-1 my-3">
       <select [(ngModel)]="categorySelected">
         @for (option of categoryList; track option){
         <option [value]="option.value">{{option.valueName}}</option>
         }
       </select>
     </div>
-    <div>
+    <div class="bg-blancCasse p-1 my-3">
       <select [(ngModel)]="priceSelected">
         @for (option of priceList; track option){
         <option [value]="option.value">{{option.valueName}}</option>
@@ -38,8 +41,8 @@
       </select>
     </div>
   </div>
-  <button (click)="filterProduct()">filter</button>
-</section>
+  <button (click)="filterProduct()" class="bg-grisAnthracite text-blancCasse p-2">Filtrer/button>
+</section> -->
 
 <section class="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto py-16 px-6">
   @for (product of productList(); track product.id){

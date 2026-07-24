@@ -1,8 +1,10 @@
-<p>Bonjour {{user().username}}</p>
-
 <div>
-<p>Votre addresse de livraison</p>
-<p>{{user().name.lastname}}</p>
-<p>{{user().name.firstname}}</p>
-<p>{{user().address.number}} {{user().address.street}} {{user().address.zipcode}} {{user().address.city}}</p>
+    <p class="font-semibold text-xl mb-5">Bonjour <span class="text-dore">{{user().username}}</span></p>
+    
+    <div>
+        <p class="mb-2">Votre addresse de livraison</p>
+        <p><b>Nom:</b> {{user().name.lastname}}</p>
+        <p><b>Prénom:</b> {{user().name.firstname}}</p>
+        <p><b>Adresse:</b> {{user().address.number}} {{user().address.street}}, {{user().address.zipcode}} {{user().address.city}}</p>
+    </div>
 </div>

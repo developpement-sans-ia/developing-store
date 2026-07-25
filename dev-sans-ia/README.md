@@ -160,6 +160,11 @@ flowchart LR
 - Détails de l'organisation (répartition des tâches, méthode de travail, temps passés) : voir le [Wiki](https://github.com/developpement-sans-ia/developing-store/wiki).
 
 ---
+## Restitution Nova Market - Groupe B
+
+https://github.com/user-attachments/assets/3e12ae65-1921-4071-861d-33c0451efd4b
+
+---
 
 ## Organisation du dépôt
 

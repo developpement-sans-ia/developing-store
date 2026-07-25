@@ -159,6 +159,10 @@ flowchart LR
 - **Slides de présentation** : [Présentation du projet](https://docs.google.com/presentation/d/15nB6zKnufRds7GJih67pHGldRO7wfYFMUSTVZd0S3ak/edit?usp=sharing) — organisation de l'équipe, maquettes, choix techniques, démo, retour d'expérience.
 - Détails de l'organisation (répartition des tâches, méthode de travail, temps passés) : voir le [Wiki](https://github.com/developpement-sans-ia/developing-store/wiki).
 
+## Restitution Nova Market - Groupe B
+
+https://github.com/user-attachments/assets/3e12ae65-1921-4071-861d-33c0451efd4b
+
 ---
 
 ## Organisation du dépôt
